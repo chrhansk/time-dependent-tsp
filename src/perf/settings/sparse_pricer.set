@@ -1,0 +1,7 @@
+limits/nodes = 1
+
+branching/mostinf/priority = 100000
+branching/relpscost/priority = -10000
+
+branching/relpscost/sbiterquot = 0
+branching/relpscost/sbiterofs = 0

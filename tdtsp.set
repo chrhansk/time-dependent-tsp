@@ -1,0 +1,8 @@
+# maximal number of presolving rounds (-1: unlimited, 0: off)
+# [type: int, range: [-1,2147483647], default: -1]
+presolving/maxrounds = 20
+
+
+# maximal number of runs, probing participates in (-1: no limit)
+# [type: int, range: [-1,2147483647], default: 1]
+#presolving/probing/maxruns = 0
