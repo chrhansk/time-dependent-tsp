@@ -1,6 +1,7 @@
 #ifndef PATH_BASED_PRICING_RESULT_HH
 #define PATH_BASED_PRICING_RESULT_HH
 
+#include <optional>
 
 #include "timed/time_expanded_graph.hh"
 #include "timed/timed_path.hh"

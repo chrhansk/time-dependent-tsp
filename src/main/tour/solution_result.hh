@@ -1,6 +1,8 @@
 #ifndef SOLUTION_RESULT_HH
 #define SOLUTION_RESULT_HH
 
+#include <optional>
+
 #include <scip/scip.h>
 
 #include "tour.hh"

@@ -2,6 +2,7 @@
 #define TIMED_PATH_SET_HH
 
 #include <unordered_set>
+#include <optional>
 #include <vector>
 
 #include "timed/timed_path.hh"
