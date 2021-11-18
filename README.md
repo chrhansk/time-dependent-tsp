@@ -53,7 +53,7 @@ individual benchmarks using
 - `make collect_<benchmark>_<size>`
 
 where size is either `medium` or `large` (again, see the article for
-details). This will produce a file `<benchmark>_<size>.csv** in the
+details). This will produce a file `<benchmark>_<size>.csv` in the
 same folder as mentioned above.
 
 Alternatively, you can run the benchmarks on their own in order to
