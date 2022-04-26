@@ -22,6 +22,7 @@ set(COMMON_SRC
   timed/cached_distances.cc
   timed/cached_tree_distances.cc
   timed/path_decomposition.cc
+  timed/timed_reader.cc
   timed/timed_router.cc
   timed/timed_edge.cc
   timed/timed_path.cc
