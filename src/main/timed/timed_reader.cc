@@ -1,14 +1,16 @@
-#include "timed_reader.hh"
-#include "graph/edge_map.hh"
-#include "graph/vertex_map.hh"
-#include "timed/timed_edge_map.hh"
-
 #include <string>
+#include <sstream>
 #include <unordered_map>
 
 #include <boost/tokenizer.hpp>
 #include <unordered_set>
 #include <utility>
+
+#include "timed_reader.hh"
+#include "graph/edge_map.hh"
+#include "graph/vertex_map.hh"
+#include "timed/timed_edge_map.hh"
+
 
 typedef std::unordered_map<std::string, idx> Header;
 
@@ -62,7 +64,11 @@ Header readHeader(const std::string &line)
 
     if(it != std::end(header))
     {
-      throw std::invalid_argument("Duplicate column");
+      std::ostringstream stream;
+
+      stream << "Duplicate column " << it->first;
+
+      throw std::invalid_argument(stream.str());
     }
 
     header.insert(std::make_pair(token, i));
@@ -77,7 +83,11 @@ idx requiredColumn(const Header &header, const std::string &name)
 
   if(it == std::end(header))
   {
-    throw std::invalid_argument("Missing column");
+    std::ostringstream stream;
+
+    stream << "Missing column " << name;
+
+    throw std::invalid_argument(stream.str());
   }
 
   return it->second;
@@ -103,7 +113,7 @@ std::vector<idx> timeColumns(const Header &header, idx& timeHorizon)
 
   if(columns.empty())
   {
-    throw std::invalid_argument("Missing column");
+    throw std::invalid_argument("Missing travel time columns");
   }
 
   return columns;
@@ -170,7 +180,18 @@ TimedReadResult readTimedInstance(std::ifstream& input)
 
     if(it != std::end(lineMap))
     {
-      throw std::invalid_argument("Duplicate link");
+      std::ostringstream stream;
+
+      stream << "Duplicate links "
+             << link
+             << " and "
+             << it->second.edgeName
+             << " between nodes "
+             << fromNode
+             << " and "
+             << toNode;
+
+      throw std::invalid_argument(stream.str());
     }
 
     Line line{travelTimes, link};
