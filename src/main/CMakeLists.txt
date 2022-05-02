@@ -106,3 +106,6 @@ target_link_libraries(timed_solver common)
 
 add_executable(lp_exporter lp_exporter.cc)
 target_link_libraries(lp_exporter common)
+
+add_executable(reader_test reader_test.cc)
+target_link_libraries(reader_test common)
