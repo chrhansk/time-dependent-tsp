@@ -9,8 +9,8 @@ This implementation supplements the article
 This code depends on the following packages:
 
 - A `C++` compiler supporting `C++ 17`, such as [gcc](https://gcc.gnu.org/) or [clang](https://clang.llvm.org/)
-- [CMake](https://cmake.org/) `>= 3.1`
-- [Boost](https://www.boost.org/) `>= 1.62`
+- [CMake](https://cmake.org/) `>= 3.10`
+- [Boost](https://www.boost.org/) `>= 1.70`
 - [GoogleTest](https://google.github.io/googletest/)
 - [SCIP](https://scipopt.org/) `>= 7.0.0`
 
