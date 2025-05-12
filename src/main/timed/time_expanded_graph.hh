@@ -127,12 +127,12 @@ public:
 
   };
 
-  class Vertices
+  class VerticesIterator
   {
   private:
     const TimeExpandedGraph& graph;
   public:
-    Vertices(const TimeExpandedGraph& graph)
+    VerticesIterator(const TimeExpandedGraph& graph)
       : graph(graph)
     {}
 
@@ -247,9 +247,9 @@ public:
     return Edges(*this, graph.getEdges());
   }
 
-  Vertices getVertices() const
+  VerticesIterator getVertices() const
   {
-    return Vertices(*this);
+    return VerticesIterator(*this);
   }
 
   SimpleEdgeFunc<num> travelTimes() const;
